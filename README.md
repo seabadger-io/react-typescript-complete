@@ -2,7 +2,7 @@
 
 ## About
 
-This is the repository of my [blog post](https://seabadger.io/tech/web-development/build-react-with?webpack-and-more/) about setting up a React with TypeScript project
+This is the repository of my [blog post]( https://seabadger.io/tech/web-development/react-on-typescript-part-2/) about setting up the build flow for a React on TypeScript project
 
 ## Contents
 
@@ -13,6 +13,8 @@ This project can be used to kickstart a React project with:
 * TypeScript linting integration for style checking
 * CSS modules support
 * unit testing with Jest and Enzyme
+* Babel support
+* support to import images to TypeScript
 
 ## Usage
 
