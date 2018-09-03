@@ -1,6 +1,13 @@
 .NameCard {
   padding: 20px;
   box-shadow: 2px 2px 5px #000;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.Details {
+  flex-basis: 80%;
+  flex-grow: 1;
 }
 
 .Name {
@@ -9,4 +16,13 @@
 
 .Age {
   font-style: italic;
+}
+
+.ProfilePicture {
+  max-width: 60px;
+}
+
+.ProfilePicture img {
+  width: 100%;
+  height: auto;
 }

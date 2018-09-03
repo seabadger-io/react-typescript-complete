@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as classes from './App.css';
+import Logo from './components/Logo/Logo';
 import { INameCardProps, NameCard } from './components/NameCard/NameCard';
 
 export class App extends React.Component {
@@ -14,6 +15,7 @@ export class App extends React.Component {
     });
     return (
       <div className={classes.App}>
+        <Logo />
         {cards}
       </div>
     );

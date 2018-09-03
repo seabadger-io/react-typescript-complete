@@ -1,7 +1,8 @@
 /node_modules
 /dist
-/dist-dev
+/dist_dev
 *.css.d.ts
+.awcache
 
 .DS_Store
 .env.local

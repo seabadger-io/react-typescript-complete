@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-// const webpack = require('webpack');
 
 const paths = {
   distFolder: path.resolve(__dirname, 'dist')
@@ -51,7 +50,16 @@ module.exports = {
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
       {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader'
+        use: [
+          {
+            loader: require.resolve('awesome-typescript-loader'),
+            options: {
+              useBabel: true,
+              babelCore: '@babel/core',
+              useCache: true,
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,
@@ -87,7 +95,20 @@ module.exports = {
             },
           },
         ]
-      }
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: require.resolve('url-loader'),
+            options: {
+              limit: 4096,
+              fallback: 'file-loader',
+              name: 'images/[hash].[ext]'
+            }
+          }
+        ],
+      },
     ],
   },
 
